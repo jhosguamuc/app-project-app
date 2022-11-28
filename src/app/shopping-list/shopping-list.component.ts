@@ -16,4 +16,8 @@ ingredients: Array<Ingredient> = [
   constructor() {
     
   }
+
+  onIngredientAdded(ingredient:Ingredient){
+    this.ingredients.push(ingredient);
+  }
 }
