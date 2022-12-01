@@ -1,4 +1,5 @@
 import { Component, OnInit} from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { RecipeService } from 'src/app/services/recipe.service';
 import { Recipe } from '../recipe.model';
 
@@ -10,7 +11,9 @@ import { Recipe } from '../recipe.model';
 export class RecipeListComponent implements OnInit {
   recipes : Array<Recipe>;
 
-  constructor(private recipeService: RecipeService) {
+  constructor(private recipeService: RecipeService,
+              private router:Router,
+              private route:ActivatedRoute) {
 
    }
 

@@ -7,15 +7,9 @@ import { Constantes } from './constantes.globales';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  ConstantesGlobales: Constantes = new Constantes();
-  loadedFeature = "";
 
   constructor() {
-    this.loadedFeature = this.ConstantesGlobales.typeFeacture_recipes; 
+
   }
 
-
-  onNavigate(feature:string) {
-    this.loadedFeature = feature;
-  }
 }

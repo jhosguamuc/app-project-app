@@ -49,6 +49,11 @@ getRecipes() : Array<Recipe> {
   return this.recipes.slice();
 }
 
+
+getRecipeById(id:number) {
+  return this.recipes[id];
+}
+
 addIngredientToShoppingList(ingredients: Ingredient[]) {
   this.shoppingListService.addIngredientList(ingredients);
 }
