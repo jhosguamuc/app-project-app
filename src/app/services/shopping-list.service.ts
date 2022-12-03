@@ -1,5 +1,6 @@
-import { EventEmitter, Injectable } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { Ingredient } from '../shared/ingredient.model';
+import { Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -7,14 +8,12 @@ import { Ingredient } from '../shared/ingredient.model';
 export class ShoppingListService {
 
   //Evento de cambio de matriz add or update or delete
-  ingredientsChanged = new EventEmitter<Array<Ingredient>>();
+  ingredientsChanged = new Subject<Array<Ingredient>>();
   //List
   private ingredients: Array<Ingredient> = [
     new Ingredient("Apple",5),
     new Ingredient("Orange",2.5),
   ];
-  //Event
-  ingredientAdded = new EventEmitter<Ingredient>();
 
   constructor() { }
 
@@ -33,7 +32,7 @@ export class ShoppingListService {
   }
 
   private changedModelIngredient(): void {
-    this.ingredientsChanged.emit(this.ingredients.slice());
+    this.ingredientsChanged.next(this.ingredients.slice());
   }
   
 }
